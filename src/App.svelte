@@ -22,7 +22,7 @@
     'row 3 column 3'
   ];
 
-  let board = Array(9).fill(null);
+  let board = Array(9).fill('');
   let currentPlayer = 'X';
   let startingPlayer = 'X';
   let winner = null;
@@ -71,7 +71,7 @@
   }
 
   function startNextRound() {
-    board = Array(9).fill(null);
+    board = Array(9).fill('');
     winner = null;
     winningLine = [];
     isDraw = false;
@@ -111,7 +111,7 @@
         aria-label={`Cell ${index + 1}, ${cellDescriptions[index]}, ${value ? `contains ${value}` : 'empty'}`}
         role="gridcell"
       >
-        {value}
+        {value || ''}
       </button>
     {/each}
   </div>
